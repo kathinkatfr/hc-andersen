@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="kort.js"></script>
+    <title>Interaktiv SVG</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        img {
+            max-width: 100%;
+        }
+
+        article {
+            width: 25vw;
+        }
+
+        circle:hover {
+            cursor: pointer;
+            fill: #123456;
+        }
+
+        #container {
+            display: grid;
+        }
+
+        #map {
+            grid-area: 1/1;
+            width: 85%;
+            place-self: center;
+        }
+
+        #info {
+            visibility: hidden;
+            position: absolute;
+            background-color: #ffffffc0;
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
+
+        .vis {
+            opacity: 0;
+            transform: translateY(-10px);
+            animation: fadein 2s ease-out forwards;
+        }
+
+        @keyframes fadein {
+            to {
+                opacity: 1;
+                transform: translateY(0px);
+            }
+        }
+
+        .animer-rute {
+            stroke-dasharray: 1000;
+            stroke-dashoffset: 1000;
+            animation: spor 6s 0s ease both;
+            width: 10px;
+        }
+
+        @keyframes spor {
+            to {
+                stroke-dashoffset: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <section id="container">
+        <div id="map"></div>
+        <article id="info">
+            <h2></h2>
+            <p></p>
+            <img src="" alt="">
+        </article>
+
+    </section>
+
+</body>
+
+</html>
